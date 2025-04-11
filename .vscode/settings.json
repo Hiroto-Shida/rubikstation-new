@@ -9,6 +9,11 @@
 	"[javascript]": {
 		"editor.defaultFormatter": "biomejs.biome"
 	},
+	"workbench.colorCustomizations": {
+		"titleBar.activeBackground": "#a94745",
+		"titleBar.inactiveBackground": "#a94745",
+		"titleBar.activeForeground": "#ffffff"
+	},
 	"editor.formatOnSave": true,
 	"editor.tabSize": 2
 }
