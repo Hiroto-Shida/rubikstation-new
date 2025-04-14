@@ -3,7 +3,7 @@ const Sample1 = () => {
 		<div>
 			{/* <h1 className='font-bold p-4 px-2'>Welcome to the Sample Page</h1> */}
 			{/* 上記classNameはフォーマットされ以下のような順番になる */}
-			<h1 className='p-4 px-2 font-bold'>Welcome to the Sample Page</h1>
+			<h1 className='px-2 p-4 font-bold'>Welcome to the Sample Page</h1>
 			<p>This is the Sample page of our application.</p>
 		</div>
 	);
