@@ -3,25 +3,25 @@ on:
   pull_request:
     
 jobs:
- build:
-   runs-on: ubuntu-latest
-   timeout-minutes: 10
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
 
-   concurrency:
+    concurrency:
       group: ${{ github.workflow }}-${{ github.ref }}
       cancel-in-progress: true
 
-   steps:
-     - name: checkout
-       uses: actions/checkout@v4
+    steps:
+      - name: checkout
+        uses: actions/checkout@v4
 
-     - name: setup-node
-       uses: actions/setup-node@v4
-       with:
-         node-version-file: package.json
+      - name: setup-node
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: package.json
 
-     - name: npm install
-       run: npm i
+      - name: npm install
+        run: npm i
 
-     - name: next build
-       run: npm run build
+      - name: next build
+        run: npm run build
