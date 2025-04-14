@@ -1,0 +1,66 @@
+name: Check Lint
+on:
+  pull_request:
+    
+jobs:
+  install-dependencies:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    concurrency:
+      group: ${{ github.workflow }}-${{ github.ref }}
+      cancel-in-progress: true
+
+    steps:
+      - name: checkout
+        uses: actions/checkout@v4
+
+      - name: setup-node
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: package.json
+
+      - name: npm install
+        run: npm i
+
+  checl-lint:
+    runs-on: ubuntu-latest
+    needs: dependency-install
+    timeout-minutes: 10
+
+    concurrency:
+      group: ${{ github.workflow }}-${{ github.ref }}
+      cancel-in-progress: true
+
+    steps:
+      - name: checkout
+        uses: actions/checkout@v4
+
+      - name: setup-node
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: package.json
+
+      - name: lint check
+        run: npm run lint
+
+  check-format:
+    runs-on: ubuntu-latest
+    needs: dependency-install
+    timeout-minutes: 10
+
+    concurrency:
+      group: ${{ github.workflow }}-${{ github.ref }}
+      cancel-in-progress: true
+
+    steps:
+      - name: checkout
+        uses: actions/checkout@v4
+
+      - name: setup-node
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: package.json
+
+      - name: check format
+        run: npm run format
