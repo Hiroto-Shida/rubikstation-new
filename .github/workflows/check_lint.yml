@@ -20,7 +20,7 @@ jobs:
         with:
           node-version-file: package.json
 
-      - name: npm install
+      - name: npm clean install
         run: npm ci
 
   check-lint:
