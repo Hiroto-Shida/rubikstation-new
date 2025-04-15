@@ -28,7 +28,6 @@ jobs:
     needs: install-dependencies
     timeout-minutes: 10
 
-
     steps:
       - name: checkout
         uses: actions/checkout@v4
