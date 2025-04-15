@@ -21,7 +21,7 @@ jobs:
           node-version-file: package.json
 
       - name: npm install
-        run: npm i
+        run: npm ci
 
   check-lint:
     runs-on: ubuntu-latest
