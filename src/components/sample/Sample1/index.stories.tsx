@@ -2,7 +2,7 @@ import type { Meta, StoryFn } from '@storybook/react';
 import Sample1 from './index';
 
 export default {
-	title: 'Components/Sample1',
+	title: 'Components/Sample/Sample1',
 	component: Sample1,
 } as Meta<typeof Sample1>;
 
