@@ -3,7 +3,7 @@ on:
   pull_request:
     
 jobs:
-  install-dependencies:
+  check-format-and-lint:
     runs-on: ubuntu-latest
     timeout-minutes: 10
 
@@ -14,6 +14,15 @@ jobs:
     steps:
       - name: checkout
         uses: actions/checkout@v4
+
+      # MEMO: このGHAがprojectの biome.json を参照してくれるならpnpmではなくこちらを使う
+      # - name: setup-biome
+      #   uses: biomejs/setup-biome@v2
+      #   with:
+      #     version: latest
+
+      # - name: Run Biome
+      #   run: biome ci
 
       # pnpm の使用のため
       - name: corepack enable
@@ -28,19 +37,6 @@ jobs:
       - name: pnpm clean install
         run: pnpm i --frozen-lockfile	
 
-  check-format-and-lint:
-    runs-on: ubuntu-latest
-    needs: install-dependencies
-    timeout-minutes: 10
-
-    steps:
-      - name: checkout
-        uses: actions/checkout@v4
-
-      - name: setup-biome
-        uses: biomejs/setup-biome@v2
-        with:
-          version: latest
 
       - name: format and lint check
         run: pnpm run format-and-lint
