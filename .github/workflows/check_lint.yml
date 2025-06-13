@@ -1,4 +1,4 @@
-name: Check Lint
+name: Check Format and Lint
 on:
   pull_request:
     
@@ -15,15 +15,20 @@ jobs:
       - name: checkout
         uses: actions/checkout@v4
 
+      # pnpm の使用のため
+      - name: corepack enable
+        run: corepack enable
+
       - name: setup-node
         uses: actions/setup-node@v4
         with:
           node-version-file: package.json
+          cache: 'pnpm'
 
       - name: pnpm clean install
         run: pnpm i --frozen-lockfile	
 
-  check-lint:
+  check-format-and-lint:
     runs-on: ubuntu-latest
     needs: install-dependencies
     timeout-minutes: 10
@@ -37,22 +42,5 @@ jobs:
         with:
           version: latest
 
-      - name: lint check
-        run: pnpm run lint
-
-  check-format:
-    runs-on: ubuntu-latest
-    needs: install-dependencies
-    timeout-minutes: 10
-
-    steps:
-      - name: checkout
-        uses: actions/checkout@v4
-
-      - name: setup-biome
-        uses: biomejs/setup-biome@v2
-        with:
-          version: latest
-
-      - name: check format
-        run: npm run format
+      - name: format and lint check
+        run: pnpm run format-and-lint
