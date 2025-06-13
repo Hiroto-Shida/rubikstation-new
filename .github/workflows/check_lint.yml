@@ -20,8 +20,8 @@ jobs:
         with:
           node-version-file: package.json
 
-      - name: npm clean install
-        run: npm ci
+      - name: pnpm clean install
+        run: pnpm i --frozen-lockfile	
 
   check-lint:
     runs-on: ubuntu-latest
@@ -38,7 +38,7 @@ jobs:
           version: latest
 
       - name: lint check
-        run: npm run lint
+        run: pnpm run lint
 
   check-format:
     runs-on: ubuntu-latest

@@ -1,19 +1,19 @@
 {
-	"editor.codeActionsOnSave": {
-		"quickfix.biome": "explicit",
-		"source.addMissingImports": "explicit",
-		"source.removeUnusedImports": "explicit",
-		"source.organizeImports.biome": "explicit"
-	},
-	"editor.defaultFormatter": "biomejs.biome",
-	"[javascript]": {
-		"editor.defaultFormatter": "biomejs.biome"
-	},
-	"workbench.colorCustomizations": {
-		"titleBar.activeBackground": "#a94745",
-		"titleBar.inactiveBackground": "#a94745",
-		"titleBar.activeForeground": "#ffffff"
-	},
-	"editor.formatOnSave": true,
-	"editor.tabSize": 2
+  "editor.codeActionsOnSave": {
+    "quickfix.biome": "explicit",
+    "source.addMissingImports": "explicit",
+    "source.removeUnusedImports": "explicit",
+    "source.organizeImports.biome": "explicit"
+  },
+  "editor.defaultFormatter": "biomejs.biome",
+  "[javascript]": {
+    "editor.defaultFormatter": "biomejs.biome"
+  },
+  "workbench.colorCustomizations": {
+    "titleBar.activeBackground": "#a94745",
+    "titleBar.inactiveBackground": "#a94745",
+    "titleBar.activeForeground": "#ffffff"
+  },
+  "editor.formatOnSave": true,
+  "editor.tabSize": 2
 }

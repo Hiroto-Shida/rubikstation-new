@@ -20,8 +20,8 @@ jobs:
         with:
           node-version-file: package.json
 
-      - name: npm clean install
-        run: npm ci
+      - name: pnpm clean install
+        run: pnpm i --frozen-lockfile	
 
-      - name: next build
-        run: npm run build
+      - name: all build
+        run: pnpm run build

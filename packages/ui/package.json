@@ -6,10 +6,6 @@
 		"./*": "./src/*/index.tsx"
 	},
 	"scripts": {
-		"lint": "biome lint -- apply ./src",
-		"format": "biome format ./src ",
-		"format:fix": "biome format ./src --write",
-		"check": "biome check --apply ./src",
 		"check-types": "tsc --noEmit"
 	},
 	"devDependencies": {
