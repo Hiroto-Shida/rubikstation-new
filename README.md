@@ -12,12 +12,12 @@ cd rubikstation-new
 
 パッケージインストール
 ```bash
-npm i
+pnpm i
 ```
 
 dev環境の起動
 ```bash
-npm run dev
+pnpm run dev
 ```
 
 ### その他環境構築

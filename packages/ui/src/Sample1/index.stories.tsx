@@ -1,5 +1,5 @@
 import type { Meta, StoryFn } from '@storybook/react';
-import Sample1 from './index';
+import { Sample1 } from './index';
 
 export default {
 	title: 'Components/Sample/Sample1',

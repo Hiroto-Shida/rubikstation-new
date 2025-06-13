@@ -1,4 +1,4 @@
-const Sample1 = () => {
+export const Sample1 = () => {
 	return (
 		<div>
 			{/* <h1 className='font-bold p-4 px-2'>Welcome to the Sample Page</h1> */}
@@ -8,4 +8,3 @@ const Sample1 = () => {
 		</div>
 	);
 };
-export default Sample1;
