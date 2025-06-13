@@ -15,28 +15,11 @@ jobs:
       - name: checkout
         uses: actions/checkout@v4
 
-      # MEMO: このGHAがprojectの biome.json を参照してくれるならpnpmではなくこちらを使う
-      # - name: setup-biome
-      #   uses: biomejs/setup-biome@v2
-      #   with:
-      #     version: latest
-
-      # - name: Run Biome
-      #   run: biome ci
-
-      # pnpm の使用のため
-      - name: corepack enable
-        run: corepack enable
-
-      - name: setup-node
-        uses: actions/setup-node@v4
+      # プロジェクト内の biome.json, package.json を参照して実行してくれる
+      - name: setup-biome
+        uses: biomejs/setup-biome@v2
         with:
-          node-version-file: package.json
-          cache: 'pnpm'
+          version: latest
 
-      - name: pnpm clean install
-        run: pnpm i --frozen-lockfile	
-
-
-      - name: format and lint check
-        run: pnpm run format-and-lint
+      - name: Run Biome
+        run: biome ci
