@@ -14,6 +14,7 @@
     "titleBar.inactiveBackground": "#a94745",
     "titleBar.activeForeground": "#ffffff"
   },
+  "typescript.tsdk": "node_modules/typescript/lib",
   "editor.formatOnSave": true,
   "editor.tabSize": 2
 }
