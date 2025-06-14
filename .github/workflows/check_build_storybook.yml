@@ -1,0 +1,32 @@
+name: Check Build Storybook
+on:
+  pull_request:
+    
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    concurrency:
+      group: ${{ github.workflow }}-${{ github.ref }}
+      cancel-in-progress: true
+
+    steps:
+      - name: checkout
+        uses: actions/checkout@v4
+
+      # pnpm の使用のため
+      - name: corepack enable
+        run: corepack enable
+
+      - name: Install Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: package.json
+          cache: 'pnpm'
+
+      - name: pnpm clean install
+        run: pnpm i --frozen-lockfile	
+
+      - name: all build
+        run: pnpm run build:storybook
