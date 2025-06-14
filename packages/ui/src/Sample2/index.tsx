@@ -21,7 +21,8 @@ const RotatingBox = () => {
 };
 
 export const Sample2 = () => (
-  <div className='h-[400px] w-full'>
+  <div className='h-[400px] w-full '>
+    <h2 className='bg-mint-500'>Sample React Three</h2>
     <Canvas camera={{ position: [2, 2, 2] }}>
       <ambientLight intensity={0.5} />
       <directionalLight position={[5, 5, 5]} intensity={1} />

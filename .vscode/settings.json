@@ -16,5 +16,10 @@
   },
   "typescript.tsdk": "node_modules/typescript/lib",
   "editor.formatOnSave": true,
-  "editor.tabSize": 2
+  "editor.tabSize": 2,
+  "tailwindCSS.experimental.configFile": {
+    "apps/storybook/.storybook/globals.css": "apps/storybook/.storybook/**",
+    "apps/web/src/app/globals.css": "apps/web/src/app/**",
+    "packages/ui/src/styles.css": "packages/ui/src/**"
+  }
 }

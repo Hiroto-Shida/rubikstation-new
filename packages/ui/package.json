@@ -9,15 +9,13 @@
     "check-types": "tsc --noEmit"
   },
   "devDependencies": {
+    "@repo/tailwind-config": "workspace:*",
     "@repo/typescript-config": "workspace:*",
-    "@turbo/gen": "^2.5.0",
+    "tailwindcss": "^4",
+    "@storybook/react": "^8.6.12",
     "@types/node": "^22.15.3",
     "@types/react": "19.1.0",
-    "@types/react-dom": "19.1.1",
-    "typescript": "5.8.2",
-    "@tailwindcss/postcss": "^4.1.4",
-    "tailwindcss": "^4",
-    "@storybook/react": "^8.6.12"
+    "@types/react-dom": "19.1.1"
   },
   "dependencies": {
     "@react-three/drei": "^10.2.0",
