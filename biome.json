@@ -9,9 +9,9 @@
     "ignoreUnknown": false,
     "includes": [
       "**",
-      "!**/.turbo/",
-      "!**/apps/web/.next/",
-      "!**/apps/storybook/storybook-static/"
+      "!**/.*",
+      "!**/storybook-static",
+      "!**/globals.css"
     ]
   },
   "formatter": {
